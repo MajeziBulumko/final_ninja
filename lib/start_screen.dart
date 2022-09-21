@@ -127,7 +127,7 @@ class _StartScreenState extends State<StartScreen> {
                   child: InkWell(
                     onTap: () {
                       // I wanna lead it to the view by category page.
-                      return ViewCat(category: catego);
+                      ViewCat(category: catego);
                     },
                     child: ListTile(
                       onTap: (() async {

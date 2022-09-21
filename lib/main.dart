@@ -70,6 +70,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text('Categories'),
               ),
               onTap: () {
+                setState(() {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (BuildContext context) {
+                    return StartScreen();
+                  }));
+                });
                 //return StartScreen();
               },
             ),
@@ -78,7 +84,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text('All Products'),
               ),
               onTap: () {
-                //return ViewAllProducts();
+                setState(() {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (BuildContext context) {
+                    return const ViewAllProducts();
+                  }));
+                });
+                //return StartScreen();
               },
             ),
             GestureDetector(
@@ -86,7 +98,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text('Stores'),
               ),
               onTap: () {
-                //return Stores();
+                setState(() {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (BuildContext context) {
+                    return const Stores();
+                  }));
+                });
+                //return StartScreen();
               },
             ),
           ],

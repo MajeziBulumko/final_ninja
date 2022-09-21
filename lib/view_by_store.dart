@@ -5,9 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 // We view all products by their store.
 //
 class Stores extends StatefulWidget {
-  final String store;
-
-  const Stores({Key? key, required this.store}) : super(key: key);
+  const Stores({super.key});
 
   @override
   State<Stores> createState() => _StoresState();
