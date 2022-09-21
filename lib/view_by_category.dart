@@ -40,7 +40,14 @@ class _ViewCatState extends State<ViewCat> {
               itemCount: streamSnap.data!.docs.length,
               itemBuilder: (context, index) {
                 final DocumentSnapshot docSnap = streamSnap.data!.docs[index];
-                return ListTile();
+                return GestureDetector(
+                  child: const Card(
+                    margin: EdgeInsets.all(10),
+                    child: ListTile(
+                      title: Text(''),
+                    ),
+                  ),
+                );
                 //trying to view each product, by category, with all its details
                 //and make it clickable for editing.
               },

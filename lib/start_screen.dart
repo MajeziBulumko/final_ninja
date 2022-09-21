@@ -124,10 +124,15 @@ class _StartScreenState extends State<StartScreen> {
                 final DocumentSnapshot docSnap = streamSnap.data!.docs[index];
                 String catego = docSnap['category'];
                 return Card(
-                  child: InkWell(
-                    onTap: () {
-                      // I wanna lead it to the view by category page.
-                      ViewCat(category: catego);
+                  child: GestureDetector(
+                    onDoubleTap: () {
+                      setState(() {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (BuildContext context) {
+                          return ViewCat(
+                              category: catego); // this line in particular
+                        }));
+                      });
                     },
                     child: ListTile(
                       onTap: (() async {
