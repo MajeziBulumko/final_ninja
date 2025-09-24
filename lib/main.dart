@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:final_ninja/start_screen.dart';
 import 'package:final_ninja/add_product.dart';
 import 'package:final_ninja/view_by_store.dart';

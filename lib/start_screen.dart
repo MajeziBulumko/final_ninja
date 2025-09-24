@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:final_ninja/view_by_category.dart';
 
@@ -47,11 +46,9 @@ class _StartScreenState extends State<StartScreen> {
                 ElevatedButton(
                     onPressed: () async {
                       final String mane = name.text;
-                      if (mane != null) {
-                        await _cats.doc(docSnap!.id).update({"category": mane});
-                        name.text = '';
-                      }
-                    },
+                      await _cats.doc(docSnap!.id).update({"category": mane});
+                      name.text = '';
+                                        },
                     child: const Text('update'))
               ],
             ),
@@ -67,7 +64,7 @@ class _StartScreenState extends State<StartScreen> {
         const SnackBar(content: Text('Category has been deleted')));
   }
 
-  Future<void> _create([DocumentSnapshot? docSnap]) async {
+  Future<void> _create() async {
     await showModalBottomSheet(
       isScrollControlled: true,
       context: context,
@@ -92,12 +89,10 @@ class _StartScreenState extends State<StartScreen> {
                   onPressed: () async {
                     final String mane = name.text;
 
-                    if (mane != null) {
-                      await _cats.add({"category": mane});
-                      name.text = '';
-                      Navigator.of(context).pop();
-                    }
-                  },
+                    await _cats.add({"category": mane});
+                    name.text = '';
+                    Navigator.of(context).pop();
+                                    },
                   child: const Text('Create'))
             ],
           ),

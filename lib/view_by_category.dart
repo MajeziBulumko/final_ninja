@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:final_ninja/view_by_category.dart';
 
 class ViewCat extends StatefulWidget {
   //this seems to be null when I try to write code that uses it.
   // Please assist here.
   final String category; //here
 
-  const ViewCat({Key? key, required this.category}) : super(key: key);
+  const ViewCat({super.key, required this.category});
 
   @override
   State<ViewCat> createState() => _ViewCatState();
@@ -40,6 +38,7 @@ class _ViewCatState extends State<ViewCat> {
               itemCount: streamSnap.data!.docs.length,
               itemBuilder: (context, index) {
                 final DocumentSnapshot docSnap = streamSnap.data!.docs[index];
+                
                 return GestureDetector(
                   child: const Card(
                     margin: EdgeInsets.all(10),
